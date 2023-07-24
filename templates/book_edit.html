@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+
+{% block css %}
+<link rel="stylesheet" href="{{url_for('static', filename='/css/list.css')}}">
+{% endblock %}
+
+
+{% block content %}
+<h1>図書編集</h1>
+<div class="container">
+    <div class="card">
+        <div class="card-body">
+            <h2 class="card-title">{{ id }}</h2>
+            <div class="card-text">
+                <form action="{{ url_for('book_edit_exe') }}" method="post">
+                <label><string>ID</strong>:{{ id }}<input type="hidden" name="id" value={{ id }}></label><br>
+                <label> タイトル：<input type="text" name="title"></label><br>
+            <button type="submit" class="btn btn-primary">更新</button>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

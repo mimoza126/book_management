@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registration Confirmation</title>
+</head>
+<body>
+    <h1>Registration Confirmation</h1>
+    <form action="{{ url_for('u_register_exe') }}" method="POST">
+        <p>User Name: {{ user_name }}</p>
+        <p>Password:**********</p>
+        <p>Mail: {{ mail }}</p>
+        <input type="submit" value="登録">
+    </form>
+</body>
+</html>

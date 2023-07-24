@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+
+{% block css %}
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+{% endblock %}
+{% block content %}
+<div class="container">
+    <div class="card">
+        <div class="card-body">
+            <h2 class="card-title">{{ book.title }}</h2>
+            <div class="card-text">
+                <p><strong>ID:</strong> {{ book.id }}</p>
+                <p><strong>著者:</strong> {{ book.author }}</p>
+                <p><strong>出版社:</strong> {{ book.publisher }}</p>
+                <p><strong>ISBN:</strong> {{ book.isbn }}</p>
+                <a class="nav-link" href="{{ url_for('book_edit', book_id=book.id) }}">編集する</a>
+                <a class="nav-link" href="{{ url_for('book_delete', book_id=book.id) }}">削除する</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}
+

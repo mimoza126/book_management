@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+
+{% block css %}
+<link rel="stylesheet" href="{{url_for('static', filename='/css/list.css')}}">
+{% endblock %}
+
+
+{% block content %}
+<h3>マイページへようこそ</h3>
+<div>
+    {% if session_user %}
+    <p><strong>Session User:</strong> {{ session_user }}</p>
+    {% endif %}
+</div>
+{% endblock %}
+
