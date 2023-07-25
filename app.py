@@ -176,6 +176,7 @@ def book_detail():
     book = db.select_book_detail(isbn)
 
     session['book_id'] = book_id
+    session['title'] = title
 
     return render_template('book_detail.html', book=book)
 
@@ -197,11 +198,13 @@ def book_edit_exe():
     book_list = db.select_all_books()
     return render_template('list.html', books = book_list)
 
+#図書削除
 @app.route('/book_delete', methods=['GET'])
 def book_delete():
     book_id = request.args.get('book_id')
     return render_template('book_delete.html', id=book_id)
 
+#図書削除実行
 @app.route('/book_delete_exe' , methods  =['post'])
 def book_delete_exe():
     id = request.form.get('id')
