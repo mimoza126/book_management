@@ -181,12 +181,12 @@ def book_detail():
     return render_template('book_detail.html', book=book)
 
 
-
+#図書の編集遷移
 @app.route('/edit', methods=['GET'])
 def book_edit():
     book_id = request.args.get('book_id')
     title = request.args.get('title')
-    return render_template('book_edit.html', id=book_id,title=title)
+    return render_template('book_edit.html', id=book_id, title=title)
 
 
 #図書の編集
