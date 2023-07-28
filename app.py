@@ -8,6 +8,7 @@ from datetime import timedelta
 app = Flask(__name__)
 
 app.secret_key=''.join(random.choices(string.ascii_letters, k=256))
+
 #トップページ
 @app.route('/', methods=['GET'])
 def index():
@@ -19,6 +20,7 @@ def index():
     else :
         # register_exe() から redirect された場合
         return render_template('index.html', msg=msg)
+
 #ユーザ登録遷移
 @app.route('/register')
 def register():

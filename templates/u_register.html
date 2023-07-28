@@ -1,33 +1,30 @@
-{% extends "layout.html" %}
-
-{% block css %}
-<link rel="stylesheet" href="{{ url_for('static', filename='css/register.css') }}">
-{% endblock %}
-
-{% block title %}
-<!-- タイトルを記述 -->
-<title>ユーザ登録</title>
-{% endblock %}
-
-{% block content %}
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>u_register</title>
+</head>
+<body>
 <div class="container">
     <h1>ユーザ登録</h1>
         <form action="{{ url_for('u_register') }}" method="post">
         <div class="form-group">
-        <label for="user_name">ユーザー名：</label>
-    <input type="text" class="form-control" id="user_name" name="user_name" required>
+            <label for="user_name">ユーザー名：</label>
+            <input type="text" class="form-control" id="user_name" name="user_name" required>
+        </div>
+    <div class="form-group">
+        <label for="mail">メールアドレス：</label>
+        <input type="email" class="form-control" id="mail" name="mail" required>
     </div>
     <div class="form-group">
-    <label for="mail">メールアドレス：</label>
-    <input type="email" class="form-control" id="mail" name="mail" required>
-    </div>
-    <div class="form-group">
-    <label for="password">パスワード：</label>
-    <input type="password" class="form-control" id="password" name="password" required>
+        <label for="password">パスワード：</label>
+        <input type="password" class="form-control" id="password" name="password" required>
     </div><br><br>
     <div class = 'text-center'>
-    <button type="submit" class="btn btn-primary">登録</button>
+        <button type="submit" class="btn btn-primary">登録</button>
     </div>
 </form>
 </div>
-{% endblock %}
+</body>
